@@ -46,7 +46,6 @@ export class SelectableDirective {
       selectableElements.indexOf(el.nativeElement)
     );
 
-    // Predict the next element
     if (currentIndices.length > 1) {
       const diff = currentIndices[1] - currentIndices[0];
       const predictedIndex = currentIndices[1] + diff;

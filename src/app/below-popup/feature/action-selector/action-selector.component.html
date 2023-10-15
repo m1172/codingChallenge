@@ -13,7 +13,7 @@
         <fa-icon [icon]="faClick" class="text-purple-500 mb-2"></fa-icon>
         <p class="text-gray-600 text-sm">Click a button</p>
     </div>
-    <div class="flex flex-col items-center bg-gray-100 p-8 cursor-pointer" (click)="closeActionSelector()">
+    <div class="flex flex-col items-center bg-gray-100 p-8 cursor-pointer">
         <fa-icon [icon]="faText" class="text-green-500 mb-2"></fa-icon>
         <p class="text-gray-600 text-sm">Input text</p>
     </div>
@@ -31,5 +31,6 @@
     </div>
 </div>
 <div class="flex justify-end">
-    <button class="bg-blue-500 text-white mt-6 py-2 px-4 rounded hover:bg-blue-600">Run bot</button>
+    <button (click)="onRunBotClick()" class="bg-blue-500 text-white mt-6 py-2 px-4 rounded hover:bg-blue-600">Run
+        bot</button>
 </div>

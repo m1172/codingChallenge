@@ -13,9 +13,23 @@
   width: 90%;
 }
 
-.task.selected {
-  border: 2px solid #7be78c;
+.disabled-button {
+  background-color: #b5bdc4; /* Grayed out color */
+  pointer-events: none;
+  position: relative; /* For tooltip positioning */
 }
-.task.predicted {
-  border: 2px solid #2a25ff;
+
+.disabled-button:hover::before {
+  content: "Select an element to enable saving.";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  bottom: 100%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  pointer-events: none;
 }

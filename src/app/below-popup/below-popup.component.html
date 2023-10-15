@@ -15,7 +15,9 @@
 
             <div class="flex justify-end">
                 <button (click)="reset()" class="text-blue-600 mr-5">Reset</button>
-                <button (click)="save()" class="bg-blue-600 text-white px-4 py-1 rounded">Save</button>
+                <button [class.disabled-button]="selectedCount === 0" [disabled]="selectedCount === 0" (click)="save()"
+                    class="bg-blue-600 text-white px-4 py-1 rounded">Save</button>
+
             </div>
         </div>
 

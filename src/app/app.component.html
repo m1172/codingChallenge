@@ -6,7 +6,9 @@
       (click)="trackSelection( inputTask, TaskType.INPUT_TASK)">
       <input type="text" [(ngModel)]="inputTask.title" [ngModelOptions]="{standalone: true}" class="input-todo"
         placeholder="Take the garbage out" />
-      <div class="btn btn-add active" (click)="addTask(inputTasks[i].title)">+
+      <div class="btn btn-add active"
+        (click)="trackChildSelection('inputTaskButton', inputTask); addTask(inputTasks[i].title)"
+        [style.border]="inputTask.childBorder">+
       </div>
     </form>
 
@@ -20,7 +22,8 @@
         <li *ngFor="let task of tasks" [class.cool]="task.completed" [style.border]="task.borderStyle"
           (click)="trackSelection( task, TaskType.TASK)">
           <input class="todo-checkbox" [checked]="task.completed" type="checkbox" [name]="task.title" />
-          <label (click)="task.completed = !task.completed" [for]="task.title"></label>
+          <label (click)="trackChildSelection('taskCheckbox', task); task.completed = !task.completed"
+            [for]="task.title" [style.border]="task.childBorder"></label>
           <span class="todo-text">
             {{ task.title }}, completed: {{ task.completed }}
           </span>

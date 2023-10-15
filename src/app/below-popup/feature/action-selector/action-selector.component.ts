@@ -7,6 +7,7 @@ import {
   faSearch,
   faSync,
 } from '@fortawesome/free-solid-svg-icons';
+import { RunBotService } from 'src/app/run-bot.service';
 
 @Component({
   selector: 'app-action-selector',
@@ -22,6 +23,12 @@ export class ActionSelectorComponent {
   faSync = faSync;
 
   @Output() closeEvent: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(private runBotService: RunBotService) {}
+
+  onRunBotClick() {
+    this.runBotService.triggerRunBot();
+  }
 
   closeActionSelector() {
     this.closeEvent.emit();
