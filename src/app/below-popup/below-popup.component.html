@@ -1,0 +1,26 @@
+<div class="fixed bottom-0 left-0 w-full flex justify-center p-4 bg-gray-800">
+    <div class="w-11/12 bg-white p-4 rounded-lg shadow-md">
+        <div *ngIf="!isActionSelectorVisible">
+            <div class="mb-4" *ngIf="!isActionSelectorVisible">
+                <p class="text-xl font-bold">Step 1. For loop</p>
+                <p *ngIf="selectedCount !== 0">
+                    Great! You selected {{ selectedCount }} elements, we predicted {{
+                    predictedCount }} additional elements.
+                    In total {{ selectedCount + predictedCount }} elements are selected.
+                </p>
+                <p *ngIf="selectedCount === 0">
+                    Select an element
+                </p>
+            </div>
+
+            <div class="flex justify-end">
+                <button (click)="reset()" class="text-blue-600 mr-5">Reset</button>
+                <button (click)="save()" class="bg-blue-600 text-white px-4 py-1 rounded">Save</button>
+            </div>
+        </div>
+
+        <app-action-selector *ngIf="isActionSelectorVisible"
+            (closeEvent)="toggleActionSelector()"></app-action-selector>
+    </div>
+
+</div>

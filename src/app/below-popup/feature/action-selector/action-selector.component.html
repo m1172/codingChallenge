@@ -1,0 +1,35 @@
+<div class="flex justify-between items-center">
+    <h2 class="text-lg mb-0 font-semibold">Step 2. Choose a child-action on each loop element</h2>
+    <div class="flex">
+        <button class="bg-gray-100 text-black py-1 px-3 rounded hover:bg-gray-200"
+            (click)="closeActionSelector()">X</button>
+    </div>
+</div>
+
+<p class="text-gray-600 mb-6">Add action you want the bot to do on the page</p>
+
+<div class="grid grid-cols-5 gap-6">
+    <div class="flex flex-col items-center bg-gray-100 p-8 cursor-pointer" (click)="closeActionSelector()">
+        <fa-icon [icon]="faClick" class="text-purple-500 mb-2"></fa-icon>
+        <p class="text-gray-600 text-sm">Click a button</p>
+    </div>
+    <div class="flex flex-col items-center bg-gray-100 p-8 cursor-pointer" (click)="closeActionSelector()">
+        <fa-icon [icon]="faText" class="text-green-500 mb-2"></fa-icon>
+        <p class="text-gray-600 text-sm">Input text</p>
+    </div>
+    <div class="flex flex-col items-center bg-gray-300 p-8">
+        <fa-icon [icon]="faDatabase" class="text-gray-500 mb-2"></fa-icon>
+        <p class="text-gray-600 text-sm">Store data</p>
+    </div>
+    <div class="flex flex-col items-center bg-gray-300 p-8">
+        <fa-icon [icon]="faArrowRight" class="text-red-500 mb-2"></fa-icon>
+        <p class="text-gray-600 text-sm">Navigate</p>
+    </div>
+    <div class="flex flex-col items-center bg-gray-300 p-8">
+        <fa-icon [icon]="faSync" class="text-teal-500 mb-2"></fa-icon>
+        <p class="text-gray-600 text-sm">For Loop</p>
+    </div>
+</div>
+<div class="flex justify-end">
+    <button class="bg-blue-500 text-white mt-6 py-2 px-4 rounded hover:bg-blue-600">Run bot</button>
+</div>
